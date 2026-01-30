@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">PoliEnergia</string>
+
+    <!-- Glossary: General -->
+    <string name="glossary_general_energy_title">Energía</string>
+    <string name="glossary_general_energy_desc"><b>¿Qué es?:</b> Es la \"comida\" que necesitan las máquinas para funcionar. Sin energía, nada se mueve ni se ilumina. No se crea de la nada, ¡la tomamos de la naturaleza!&lt;br&gt; <b>En esta App:</b> Es la electricidad total acumulada en tu sistema. La verás representada en la barra que se va llenando poco a poco.</string>
+    <string name="glossary_general_power_title">Potencia</string>
+    <string name="glossary_general_power_desc"><b>¿Qué es?:</b> Es la velocidad a la que fabricamos electricidad. Si la energía fuera agua llenando una piscina, la potencia sería el tamaño del chorro de la manguera.&lt;br&gt;<b>En esta App:</b> Es el número que cambia a cada momento. Si consigues una potencia alta, llenarás la barra de energía mucho más rápido.</string>
+    <string name="glossary_general_battery_title">Batería</string>
+    <string name="glossary_general_battery_desc"><b>¿Qué es?:</b> Como el sol no brilla de noche y el viento no siempre sopla, necesitamos guardar la electricidad para usarla después. Funciona igual que la batería de tu celular.&lt;br&gt;<b>En esta App:</b> Es el \"tanque\" de tu sistema. Te muestra visualmente cuánta electricidad has logrado guardar hasta el momento.</string>
+    <string name="glossary_general_consumption_title">Consumo o Carga</string>
+    <string name="glossary_general_consumption_desc"><b>¿Qué es?:</b> Es quien \"gasta\" la energía guardada. Encender una luz, ver la tele o conectar una casa consume la electricidad que tanto costó generar.&lt;br&gt;<b>En esta App:</b> Representa la salida de energía. Si conectas aparatos a tu sistema, verás que la barra de batería empieza a bajar porque se está usando esa electricidad.</string>
+
+    <!-- Glossary: Solar -->
+    <string name="glossary_solar_panel_title">Panel Solar</string>
+    <string name="glossary_solar_panel_desc"><b>¿Qué es?:</b> Es como un \"sándwich tecnológico\". Está hecho de un material especial que se emociona cuando la luz lo toca y suelta chispas de electricidad.&lt;br&gt;<b>En esta App:</b> Es el dispositivo principal. Observa cómo cambia la potencia que genera cuando modificas las condiciones de luz (hora o clima).</string>
+    <string name="glossary_solar_irradiance_title">Irradiancia (Fuerza del Sol)</string>
+    <string name="glossary_solar_irradiance_desc"><b>¿Qué es?:</b> Es la fuerza con la que llega la luz. Al mediodía el sol es muy fuerte (mucha irradiancia), pero al atardecer es débil. ¡Más luz significa más electricidad!&lt;br&gt;<b>En esta App:</b> Este valor cambia según la Hora del Día que elijas. Observa que a las 12:00 PM la generación es alta, y a las 6:00 PM es casi nula.</string>
+    <string name="glossary_solar_cloudiness_title">Nubosidad</string>
+    <string name="glossary_solar_cloudiness_desc"><b>¿Qué es?:</b> Las nubes funcionan como unas gafas de sol gigantes. Tapan parte de la luz. Aunque sea de día, si hay muchas nubes, el panel generará menos energía.&lt;br&gt;<b>En esta App:</b> Al cambiar el clima a \"Nublado\", notarás que la potencia baja inmediatamente, indicando que al panel le llega menos luz.</string>
+    <string name="glossary_solar_angle_title">Ángulo de Incidencia</string>
+    <string name="glossary_solar_angle_desc"><b>¿Qué es?:</b> Para capturar energía, el panel debe mirar al sol de frente. Si la luz le pega de lado, \"resbala\" y se pierde, como una pelota en una pared inclinada.&lt;br&gt;<b>En esta App:</b> Es la razón técnica por la que generas menos energía en la mañana o tarde, aunque haya sol: los rayos no golpean el panel de frente, sino de lado.</string>
+
+    <!-- Glossary: Wind -->
+    <string name="glossary_wind_turbine_title">Aerogenerador</string>
+    <string name="glossary_wind_turbine_desc"><b>¿Qué es?:</b> ¡No es un ventilador gigante! Es al revés: el ventilador usa electricidad para hacer aire, pero esta máquina usa aire para hacer electricidad.&lt;br&gt;<b>En esta App:</b> Es la turbina que ves en el centro. Su movimiento te indica visualmente si el sistema está activo y funcionando.</string>
+    <string name="glossary_wind_speed_title">Velocidad del Viento</string>
+    <string name="glossary_wind_speed_desc"><b>¿Qué es?:</b> Es el combustible de esta máquina. El viento necesita soplar con fuerza para poder mover las aspas pesadas. Una brisa suave no sirve.&lt;br&gt;<b>En esta App:</b> Tú controlas esto con el deslizador. Si aumentas la velocidad, verás que la turbina gira más rápido y la potencia sube.</string>
+    <string name="glossary_wind_blades_title">Aspas (Palas)</string>
+    <string name="glossary_wind_blades_desc"><b>¿Qué es?:</b> Tienen forma curva como las alas de un avión. Están diseñadas para \"atrapar\" el viento y convertir ese empuje en giros.&lt;br&gt;<b>En esta App:</b> Observa que necesitan una velocidad mínima de viento para empezar a moverse. Si el viento es muy bajo, las aspas permanecerán quietas.</string>
+    <string name="glossary_wind_brake_title">Freno de Seguridad</string>
+    <string name="glossary_wind_brake_desc"><b>¿Qué es?:</b> ¿Sabías que si hay demasiado viento es peligroso? La turbina podría girar tan rápido que se rompería. Por eso, en las tormentas se frena sola.&lt;br&gt;<b>En esta App:</b> Si subes la velocidad del viento al máximo (zona roja), la simulación detendrá la turbina y la generación de energía caerá a cero para simular esta protección.</string>
+
+    <!-- Appliances -->
+    <string name="appliance_fridge">Refrigerador</string>
+    <string name="appliance_tv">Televisor</string>
+    <string name="appliance_bulb">Bombilla LED</string>
+    <string name="appliance_microwave">Microondas</string>
+    <string name="appliance_laptop">Laptop</string>
+
 </resources>

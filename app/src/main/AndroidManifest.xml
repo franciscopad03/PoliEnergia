@@ -12,13 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoliEnergia">
         <activity
+            android:name=".consumption.ConsumptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".glossary.GlossaryScreen"
+            android:exported="false" />
+        <activity
             android:name=".SolarActivity"
             android:exported="false"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EolicActivity"
             android:exported="false"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LearningActivity"
             android:exported="false" />

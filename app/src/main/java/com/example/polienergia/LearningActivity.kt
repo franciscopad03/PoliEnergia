@@ -7,6 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.polienergia.consumption.ConsumptionActivity
+import com.example.polienergia.glossary.GlossaryCategory
+import com.example.polienergia.glossary.GlossaryScreen
 
 class LearningActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,21 +22,28 @@ class LearningActivity : AppCompatActivity() {
             insets
         }
 
-        val solarButton: ImageButton = findViewById(R.id.solarButton)
-        solarButton.setOnClickListener {
-            val intent = Intent(this, SolarActivity::class.java)
-            startActivity(intent)
+        // --- Navigation Buttons ---
+        findViewById<ImageButton>(R.id.solarButton).setOnClickListener {
+            startActivity(Intent(this, SolarActivity::class.java))
         }
 
-        val eolicaButton: ImageButton = findViewById(R.id.eolicaButton)
-        eolicaButton.setOnClickListener {
-            val intent = Intent(this, EolicActivity::class.java)
-            startActivity(intent)
+        findViewById<ImageButton>(R.id.eolicaButton).setOnClickListener {
+            startActivity(Intent(this, EolicActivity::class.java))
         }
 
-        val returnButton: ImageButton = findViewById(R.id.imageButton_Return)
-        returnButton.setOnClickListener {
+        findViewById<ImageButton>(R.id.imageButton_Return).setOnClickListener {
             finish()
+        }
+
+        findViewById<ImageButton>(R.id.glossary_info_button).setOnClickListener {
+            val intent = Intent(this, GlossaryScreen::class.java).apply {
+                putExtra("CATEGORY", GlossaryCategory.GENERAL)
+            }
+            startActivity(intent)
+        }
+
+        findViewById<ImageButton>(R.id.consumption_button).setOnClickListener {
+            startActivity(Intent(this, ConsumptionActivity::class.java))
         }
     }
 }

@@ -4,214 +4,271 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6F5E6"
+    android:background="@android:color/white"
     tools:context=".SolarActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/solar_background_card"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="32dp"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- 1. Imagen de fondo (detrás de todo) -->
+    <ImageView
+        android:id="@+id/day_night_image"
+        android:layout_width="1300dp"
+        android:layout_height="900dp"
+        android:layout_marginTop="200dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/fondo_dia_trans1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <!-- Panel de control anclado abajo -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blue_movable_block"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-            <!-- Dynamic Background Images -->
-            <ImageView
-                android:id="@+id/sun_image"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_sun" />
+        <ImageView
+            android:id="@+id/casing_background_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/carcasa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/moon_image"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_moon" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/panel_solar" />
 
-            <!-- The Blue Background -->
-            <View
-                android:id="@+id/blue_rectangle"
-                android:layout_width="513dp"
-                android:layout_height="240dp"
-                android:background="#1E5A70"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.896"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.878" />
+        <TextView
+            android:id="@+id/current_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="188dp"
+            android:text="0.00"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="160dp"
-                android:layout_height="119dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="@+id/blue_rectangle"
-                app:layout_constraintTop_toTopOf="@+id/blue_rectangle"
-                app:srcCompat="@drawable/panel_solar" />
+        <TextView
+            android:id="@+id/voltage_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="156dp"
+            android:text="V: "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/voltage_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.00"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/voltage_label"
-                app:layout_constraintStart_toEndOf="@+id/voltage_label"
-                app:layout_constraintTop_toTopOf="@+id/voltage_label"
-                app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/current_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="188dp"
+            android:text="I: "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/current_value"
+            app:layout_constraintHorizontal_bias="0.323"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/voltage_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
-                android:text="V: "
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        <TextView
+            android:id="@+id/voltage_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="156dp"
+            android:text="0.00"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/current_label"
-                android:layout_width="20dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="8dp"
-                android:text="I: "
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/voltage_label"
-                app:layout_constraintTop_toBottomOf="@+id/voltage_label" />
+        <SeekBar
+            android:id="@+id/seekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="116dp"
+            android:max="2"
+            android:progress="1"
+            android:progressBackgroundTint="#B0FFFFFF"
+            android:progressTint="@android:color/white"
+            android:thumbTint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/current_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.00"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/current_label"
-                app:layout_constraintStart_toEndOf="@+id/current_label"
-                app:layout_constraintTop_toTopOf="@+id/current_label" />
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="57dp"
+            android:max="1440"
+            android:progressBackgroundTint="#B0FFFFFF"
+            android:progressTint="@android:color/white"
+            android:thumbTint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Right Column -->
-            <TextView
-                android:id="@+id/time_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/seekBar"
-                app:layout_constraintEnd_toEndOf="@+id/seekBar"
-                app:layout_constraintStart_toStartOf="@+id/seekBar" />
+        <TextView
+            android:id="@+id/time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="@+id/seekBar"
+            app:layout_constraintStart_toStartOf="@+id/seekBar" />
 
-            <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="24dp"
-                android:max="1440"
-                android:progressBackgroundTint="#B0FFFFFF"
-                android:progressTint="@android:color/white"
-                android:thumbTint="@android:color/white"
-                app:layout_constraintEnd_toEndOf="@+id/blue_rectangle"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toTopOf="@+id/blue_rectangle" />
+        <TextView
+            android:id="@+id/weather_condition_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="212dp"
+            android:layout_marginTop="95dp"
+            android:text="Condición Climática"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/weather_condition_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Condición Climática"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-                app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-                app:layout_constraintStart_toStartOf="@+id/seekBar2" />
+        <TextView
+            android:id="@+id/normal_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="246dp"
+            android:layout_marginTop="136dp"
+            android:text="Normal"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <SeekBar
-                android:id="@+id/seekBar2"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:max="2"
-                android:progress="1"
-                android:progressBackgroundTint="#B0FFFFFF"
-                android:progressTint="@android:color/white"
-                android:thumbTint="@android:color/white"
-                app:layout_constraintEnd_toEndOf="@+id/seekBar"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/seekBar"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        <TextView
+            android:id="@+id/cloudy_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="136dp"
+            android:text="Nublado"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/sunny_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soleado"
-                android:textColor="@android:color/white"
-                app:layout_constraintStart_toStartOf="@+id/seekBar2"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        <TextView
+            android:id="@+id/sunny_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="136dp"
+            android:text="Soleado"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/normal_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Normal"
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-                app:layout_constraintStart_toStartOf="@+id/seekBar2"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="191dp"
+            android:text="OFF-ON"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/cloudy_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nublado"
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Hora:"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/time_label"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/casing_background_image"
+            app:layout_constraintTop_toTopOf="@+id/casing_background_image"
+            app:layout_constraintVertical_bias="0.175" />
 
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="16dp"
-                android:text="ON - OFF"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle"
-                app:layout_constraintEnd_toEndOf="@+id/blue_rectangle" />
+        <ImageButton
+            android:id="@+id/glossary_info_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Glosario Solar"
+            android:src="@android:drawable/ic_menu_help"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    <!-- Área de simulación arriba del panel de control -->
+    <ImageView
+        android:id="@+id/bulb"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/blue_movable_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/lightbulb" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="215dp"
+        android:layout_height="155dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bulb"
+        app:layout_constraintEnd_toEndOf="@+id/bulb"
+        app:layout_constraintStart_toStartOf="@+id/bulb"
+        app:layout_constraintTop_toTopOf="@+id/bulb"
+        app:srcCompat="@drawable/light_effect" />
+
+    <ProgressBar
+        android:id="@+id/battery_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="-20dp"
+        android:layout_marginBottom="35dp"
+        android:max="100000"
+        android:progress="0"
+        android:progressDrawable="@drawable/custom_battery_progress"
+        android:rotation="270"
+        app:layout_constraintBottom_toTopOf="@+id/blue_movable_block"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
