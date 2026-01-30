@@ -1,4 +1,5 @@
 PoliEnergía 🔋☀️🌬️
+
 PoliEnergía es una aplicación educativa de Android diseñada para enseñar conceptos de energías renovables (solar y eólica) y eficiencia energética. Este proyecto se desarrolló como parte del programa de vinculación con la sociedad: "Ingeniería para el desarrollo de prototipos didácticos para formación educativa".
 
 📋 Descripción del Proyecto
@@ -28,7 +29,7 @@ Para clonar y ejecutar esta aplicación localmente:
 Clonar el repositorio:
 
 Bash
-git clone https://github.com/tu-usuario/polienergia.git
+git clone https://github.com/franciscopad03/PoliEnergia.git
 Abrir en Android Studio: Asegúrate de tener instalada la versión Jellyfish o superior.
 
 Generar APK: Dirígete a Build > Build Bundle(s) / APK(s) > Build APK(s).
